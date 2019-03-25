@@ -1,0 +1,117 @@
+.footer
+	background-color: white 
+	.studio
+		align-items: stretch
+		background-color: black
+		@extend .flex
+		flex-flow: row wrap 
+		justify-content: space-between 
+		> * 
+			flex: 1
+			overflow: hidden
+			height: 500px
+			+mq(1140px, max)
+				&:not(:last-child)
+					height: auto
+			&:nth-child(1)
+				color: white
+				background: url(assets/imgs/dash.png) center center / cover no-repeat transparent
+				+mq(2050px, min)
+					display: none
+				+mq(1279px, max)
+					background: black
+					+mq(1140px, max)
+						flex: 0 0 auto 
+						padding: 30px
+						width: 100%
+				position: relative
+				padding: 35px 15px
+				+mq(2048px, max)
+					+mq(1280px, min)
+						padding: 1vw
+				.contato
+					height: 100%
+					width: 100%
+					> div 
+						>p,
+						>span
+							display: block
+							margin-bottom: 10px
+							+rem('font-size', 13px)
+							+mq(2048px, max)
+								+mq(1280px, min)
+									font-size: .8vmax
+									margin-bottom: 1vw
+							&.endereco
+								margin-bottom: 40px
+								+mq(2048px, max)
+									+mq(1280px, min)
+										margin-bottom: 3vw
+						+mq(1279px, max)
+							&:first-child
+								height: 100%
+								width: 100%
+								display: flex 
+								flex-flow: column wrap 
+								justify-content: center 
+								align-items: center
+								text-align: center
+						&:last-child
+						    bottom: 0
+						    position: absolute
+						    right: 0
+						    margin: 35% 1%		
+						    +mq(2048px, max)
+							    +mq(1280px, min)
+							    	margin: 4vw 2vw		
+						    +mq(1279px, max)
+						    	display: none
+				h2 
+					font-weight: 500
+					text-transform: uppercase
+					+rem('font-size', 35px)
+					+mq(2048px, max)
+						+mq(1280px, min)
+							font-size: 2.7vw
+					&.quem-somos-title
+						>span 
+							display: block 
+							&:last-child
+								text-indent: 50px
+			&:nth-child(2)
+				background-color: white
+				flex: 0 0 auto 
+				width: 40%
+				padding: 30px 15px
+				+mq(1140px, max)
+					flex: 1
+					+mq(814px, max)
+						flex: 0 0 auto
+						order: 3
+						width: 100%
+				p
+					+rem(('font-size':12px, 'line-height':22px))
+			&[style]
+		        background-position: center
+		        background-repeat: no-repeat
+		        background-size: cover
+		        +mq(814px, max)
+		        	background-attachment: fixed
+		        	flex: 0 0 auto
+		        	height: 220px 
+		        	order: 2
+		        	width: 100%
+	.container
+		padding: 5px 15px
+		@extend .flex
+		flex-flow: row wrap 
+		+mq(680px, max)
+			flex-flow: column wrap 
+			justify-content: center
+		justify-content: flex-end 
+		align-items: center
+		.stamps
+			background-color: black 
+			color: white
+			&:first-of-type
+				margin-left: 6px

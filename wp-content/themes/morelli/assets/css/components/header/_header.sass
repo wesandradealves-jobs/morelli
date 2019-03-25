@@ -1,0 +1,147 @@
+.header
+	color: white
+	.container
+		padding-top: 10px
+		position: relative
+	.shortcuts
+		height: 0
+		position: absolute
+		padding: 15px 30px 0
+		top: 0
+		width: 100%
+		z-index: 2
+		+mq(767px, max)
+			height: initial
+			padding: 0
+			position: relative
+			display: flex
+			flex-flow: row wrap 
+			justify-content: space-between
+			align-items: center
+			+mq(568px, max)
+				flex-flow: column wrap 
+				justify-content: center
+			.language
+				order: 1
+			.contato
+				order: 2
+		.language
+			>nav 
+				>ul 
+					align-items: center
+					@extend .flex
+					flex-flow: row wrap 
+					justify-content: flex-end	
+					>li 
+						+rem('font-size', 14px)
+						font-weight: bold
+						text-transform: uppercase
+						&:hover,	
+						&.active
+							color: $gold 
+						&:not(:last-of-type)
+							&::after
+								content: '|'
+								display: inline-block
+								vertical-align: middle
+								margin: 0 5px				
+		.contato 
+			align-items: baseline
+			@extend .flex
+			flex-flow: row wrap 
+			justify-content: flex-end
+			i 
+				display: inline-block
+				vertical-align: middle 
+				margin-right: 5px
+			p
+				+rem('font-size', 13px)
+				+mq(500px, max)
+					+rem('font-size', 11px)
+				font-weight: 500
+				&:not(:last-of-type)
+					&::after
+						content: '|'
+						display: inline-block
+						vertical-align: middle
+						margin: 0 5px
+	.logo
+		display: block 
+		text-align: center
+		z-index: 1
+		img 
+			display: inline-block
+		+mq(568px, max)
+			margin: 15px auto 
+	.mobile-navigation
+		.navigation
+			display: none 
+			&.toggle 
+				display: block
+			>ul 
+				>li 
+					>ul 
+						display: none							
+					position: relative
+					&:last-child
+						display: none
+					background-color: $gold
+					color: black 
+					display: block 
+					border: 1px $gold solid 
+					padding: 10px 15px
+					+rem('font-size', 14px)
+					&:hover,
+					&.current
+						background-color: black
+						color: $gold
+	.container
+		.navigation
+			+mq(500px, max)
+			    position: absolute
+			    top: calc(50% - 30px/2)
+			    right: 30px	
+			    z-index: 3
+			> ul 
+				@extend .flex
+				flex-flow: row wrap 
+				justify-content: space-between
+				font-family: 'Roboto Condensed', sans-serif
+				margin: 0 auto 
+				max-width: 680px
+				width: 100%
+				> li 
+					position: relative
+					&:hover ul 
+						display: block
+					ul
+						background-color: $matte
+						position: absolute
+						display: none
+						top: 100%
+						left: 0 
+						width: 220px
+						z-index: 10
+						> li 	
+							display: block 
+							color: white 
+							padding: 8.5px 17px
+							text-align: left
+							&:hover 
+								background-color: $gold
+								color: black
+					&:last-child
+						display: none
+						+mq(500px, max)
+							display: block
+					&:not(:last-child)
+						+mq(500px, max)
+							display: none
+						flex: 1
+						+rem(('font-size':15px,'line-height':30px))
+						+mq(640px, max)
+							+rem('font-size', 13px)
+						text-align: center
+						&:hover
+							background-color: $gold
+							color: black

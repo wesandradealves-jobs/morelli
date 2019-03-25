@@ -1,0 +1,124 @@
+.pg-home
+	.grid
+		display: flex
+		flex-flow: row wrap
+		margin-bottom: -20vw
+		width: 100%
+		.grid-item 
+			background: black
+			border: 1px solid rgba(255,255,255,.2)
+			flex: auto
+			padding: 15px
+			height: 35vw
+			.grid-bg
+				position: absolute 
+				top: 0 
+				left: 0
+				width: 100%
+				height: 100%
+				display: block
+			    background-position: center 
+			    background-repeat: no-repeat
+			    background-size: cover
+			    z-index: 1
+			.grid-posts
+				height: 100%
+				z-index: 2
+				@extend .flex 
+				align-items: center
+				flex-flow: column wrap 
+				justify-content: space-around
+				width: 100%
+				.post
+					&:hover
+						background-color: $gold 
+						color: white
+					background-color: black 
+					color: white
+					padding: 1vw
+					&:not(:last-child)
+						margin-bottom: 1vw
+					h3 
+						text-transform: uppercase
+						+rem('font-size', 1.5vw)
+					p 
+						+rem(('font-size':1.3vw,'line-height':1.5vw))
+						margin: 1vw 0 2vw
+						& + a 
+							font-family: 'Roboto Condensed', sans-serif
+							text-transform: uppercase 
+							+rem('font-size',1.45vw)
+							i 
+								display: inline-block 
+								vertical-align: middle 
+								font-style: initial
+								top: -1px
+			&:last-child
+				background: url(assets/imgs/triangle.png) center -10vmax / cover no-repeat transparent
+				color: white
+				cursor: pointer
+				+transition(500ms)
+				&:hover 
+					opacity: .75
+				p
+					position: absolute
+					bottom: 1vw
+					right: 0
+					width: 70%
+					font-size: 1.31vmax
+					line-height: 1.9vmax
+				h2
+					z-index: 2
+					+mq(2048px, max)
+						top: 0
+						font-weight: 500
+						text-transform: uppercase
+						font-size: 1.5vw
+						position: absolute
+						left: 0
+						margin: 2vw 1.5vw
+			&:first-child
+				background: url(assets/imgs/dash.png) center center / cover no-repeat transparent
+				color: white
+				h2
+					span
+						display: block
+						&:last-child
+						    letter-spacing: .13vw
+					+mq(2048px, max)
+						bottom: 0
+						font-weight: 500
+						text-transform: uppercase
+						font-size: 3.2vw
+						position: absolute
+						right: 0
+						margin: 4vw 2vw					
+			&:nth-child(3n+1) 
+				width: 33%
+			&:nth-child(3n+2) 
+				width: 37%
+			&:nth-child(3n+3)
+				height: 20vw 
+				width: 28.4%
+				margin-right: 0
+			&:nth-child(3n+4)
+				height: 50vw
+				width: 15%
+			&:nth-child(3n+5)
+				height: 50vw
+				width: 48.01%
+			&:nth-child(3n+6)
+				height: 50vw
+				top: -20vw
+				width: 25%
+			&:nth-child(3n+7)
+				height: 20vw
+				top: -20vw
+				width: 43%
+			&:nth-child(3n+8)
+				height: 20vw
+				top: -20vw
+				width: 20%
+			&:nth-child(3n+9)
+				height: 20vw
+				top: -20vw	

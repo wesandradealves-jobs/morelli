@@ -1,0 +1,49 @@
+.pg-fale-conosco
+	.contactform
+		margin: 0 auto 
+		max-width: 1024px
+		padding: 65px 45px
+		.btn 
+			width: 100%
+		p  
+			+rem('font-size', 22px)
+			font-weight: bold
+			text-align: center
+			i 
+				display: block 
+				text-align: center 
+				margin: 0 auto 4px 
+				+rem('font-size', 26px)
+		> * 
+			display: block 
+			width: 100%
+			&:not(:last-child)
+				margin-bottom: 10px 
+			textarea,
+			input:not([type="checkbox"])
+				border: 1px transparent solid
+				display: block 
+				width: 100%
+				padding: 10px 12px
+				background-color: lightgray
+				color: gray
+				+rem('font-size', 16px)
+				overflow: hidden
+				resize: none 
+				border: 1px gray solid
+				&:focus
+					color: black
+					background-color: lighten($gold, 40%)
+					border: darken($gold, 30%)
+			>label 
+				display: block 
+				+rem('font-size', 16px)
+				color: gray
+				& ~ span 
+					display: block
+					margin-top: 4px 
+					> * 
+						display: inline-block 
+						vertical-align: middle
+			textarea
+				height: 100px
