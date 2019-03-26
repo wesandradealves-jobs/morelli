@@ -138,7 +138,7 @@ function wp_before_admin_bar_render( )
 add_action( 'wp_dashboard_setup', 'disable_default_dashboard_widgets', 999 );
 remove_action( 'welcome_panel', 'wp_welcome_panel' );
 add_action( 'wp_before_admin_bar_render', 'wp_before_admin_bar_render' );
-add_filter('acf/settings/show_admin', '__return_false');
+// add_filter('acf/settings/show_admin', '__return_false');
 function disable_default_dashboard_widgets( )
 		{
 				remove_meta_box( 'dashboard_right_now', 'dashboard', 'core' );

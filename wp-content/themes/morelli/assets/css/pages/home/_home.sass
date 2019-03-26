@@ -22,7 +22,8 @@
 			    background-size: cover
 			    z-index: 1
 			.grid-posts
-				height: 100%
+				overflow: hidden
+				min-height: 100%
 				z-index: 2
 				@extend .flex 
 				align-items: center
@@ -40,21 +41,21 @@
 						margin-bottom: 1vw
 					h3 
 						text-transform: uppercase
-						+rem('font-size', 1.5vw)
+						+rem('font-size', 1.1vw)
 					p 
-						+rem(('font-size':1.3vw,'line-height':1.5vw))
-						margin: 1vw 0 2vw
+						+rem(('font-size':.9vw,'line-height':1.2vw))
+						margin: 1vw 0
 						& + a 
 							font-family: 'Roboto Condensed', sans-serif
 							text-transform: uppercase 
-							+rem('font-size',1.45vw)
+							+rem('font-size',1.2vmax)
 							i 
 								display: inline-block 
 								vertical-align: middle 
 								font-style: initial
 								top: -1px
 			&:last-child
-				background: url(assets/imgs/triangle.png) center -10vmax / cover no-repeat transparent
+				background: url(assets/imgs/triangle.png) center -9vmax / cover no-repeat transparent
 				color: white
 				cursor: pointer
 				+transition(500ms)
@@ -102,23 +103,23 @@
 				width: 28.4%
 				margin-right: 0
 			&:nth-child(3n+4)
-				height: 50vw
+				height: 30vw
 				width: 15%
 			&:nth-child(3n+5)
-				height: 50vw
+				height: 30vw
 				width: 48.01%
 			&:nth-child(3n+6)
 				height: 50vw
 				top: -20vw
 				width: 25%
 			&:nth-child(3n+7)
-				height: 20vw
-				top: -20vw
+				height: 22vw
+				top: -22vw
 				width: 43%
 			&:nth-child(3n+8)
-				height: 20vw
-				top: -20vw
+				height: 22vw
+				top: -22vw
 				width: 20%
 			&:nth-child(3n+9)
-				height: 20vw
-				top: -20vw	
+				height: 22vw
+				top: -22vw	
