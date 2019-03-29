@@ -2,58 +2,14 @@
 	.grid
 		display: flex
 		flex-flow: row wrap
-		margin-bottom: -20vw
+		margin-bottom: -5vw
 		width: 100%
-		.grid-item 
+		>.grid-item 
 			background: black
 			border: 1px solid rgba(255,255,255,.2)
 			flex: auto
 			padding: 15px
 			height: 35vw
-			.grid-bg
-				position: absolute 
-				top: 0 
-				left: 0
-				width: 100%
-				height: 100%
-				display: block
-			    background-position: center 
-			    background-repeat: no-repeat
-			    background-size: cover
-			    z-index: 1
-			.grid-posts
-				overflow: hidden
-				min-height: 100%
-				z-index: 2
-				@extend .flex 
-				align-items: center
-				flex-flow: column wrap 
-				justify-content: space-around
-				width: 100%
-				.post
-					&:hover
-						background-color: $gold 
-						color: white
-					background-color: black 
-					color: white
-					padding: 1vw
-					&:not(:last-child)
-						margin-bottom: 1vw
-					h3 
-						text-transform: uppercase
-						+rem('font-size', 1.1vw)
-					p 
-						+rem(('font-size':.9vw,'line-height':1.2vw))
-						margin: 1vw 0
-						& + a 
-							font-family: 'Roboto Condensed', sans-serif
-							text-transform: uppercase 
-							+rem('font-size',1.2vmax)
-							i 
-								display: inline-block 
-								vertical-align: middle 
-								font-style: initial
-								top: -1px
 			&:last-child
 				background: url(assets/imgs/triangle.png) center -9vmax / cover no-repeat transparent
 				color: white
@@ -93,33 +49,101 @@
 						font-size: 3.2vw
 						position: absolute
 						right: 0
-						margin: 4vw 2vw					
-			&:nth-child(3n+1) 
+						margin: 4vw 2vw		
+			@for $i from 2 through 9 
+				&:nth-child(#{$i}) 
+					&::after 
+						content: '#{$i}'
+						display: block 
+						position: absolute 
+						height: 3vw
+						width: 3vw
+						line-height: 3vw
+						font-size: 1.2vw
+						color: white 
+						border: 1px white solid 
+						+border(999px)
+						top: calc(50% - 1.5vw)
+						left: calc(50% - 1.5vw)
+						z-index: 1
+						text-align: center
+			&:nth-child(1) 
 				width: 33%
-			&:nth-child(3n+2) 
+			&:nth-child(2) 
 				width: 37%
-			&:nth-child(3n+3)
-				height: 20vw 
+			&:nth-child(3)
+				height: 15vw 
 				width: 28.4%
 				margin-right: 0
-			&:nth-child(3n+4)
+			&:nth-child(4)
 				height: 30vw
-				width: 15%
-			&:nth-child(3n+5)
+				width: 19.2%
+			&:nth-child(5)
 				height: 30vw
-				width: 48.01%
-			&:nth-child(3n+6)
-				height: 50vw
-				top: -20vw
-				width: 25%
-			&:nth-child(3n+7)
+				width: 48%
+			&:nth-child(6)
+			    height: 35vw
+			    top: -20vw
+			    width: 27%
+			&:nth-child(7)
+				height: 15vw
+				top: 50vw
+				width: 29%
+				position: absolute
+				right: 0
+			&:nth-child(8)
 				height: 22vw
-				top: -22vw
-				width: 43%
-			&:nth-child(3n+8)
+				top: -5vw
+				width: 15.5%
+			&:nth-child(9)
 				height: 22vw
-				top: -22vw
-				width: 20%
-			&:nth-child(3n+9)
+				top: -5vw
+				flex: 1
+			&:nth-child(10)
 				height: 22vw
-				top: -22vw	
+				top: -5vw	
+				flex: 1				
+		.grid-bg
+			position: absolute 
+			top: 0 
+			left: 0
+			width: 100%
+			height: 100%
+			display: block
+			background-position: center 
+			background-repeat: no-repeat
+			background-size: cover
+			z-index: 2
+		.grid-posts
+			overflow: hidden
+			min-height: 100%
+			z-index: 3
+			@extend .flex 
+			align-items: center
+			flex-flow: column wrap 
+			justify-content: space-around
+			width: 100%
+			.post
+				&:hover
+					background-color: $gold 
+					color: white
+				background-color: black 
+				color: white
+				padding: 1vw
+				&:not(:last-child)
+					margin-bottom: 1vw
+				h3 
+					text-transform: uppercase
+					+rem('font-size', 1.1vw)
+				p 
+					+rem(('font-size':.9vw,'line-height':1.2vw))
+					margin: 1vw 0
+					& + a 
+						font-family: 'Roboto Condensed', sans-serif
+						text-transform: uppercase 
+						+rem('font-size',1.2vmax)
+						i 
+							display: inline-block 
+							vertical-align: middle 
+							font-style: initial
+							top: -1px

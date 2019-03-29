@@ -21,7 +21,7 @@
 			</div>
 			<!-- Áreas de Atuação -->
 			<?php 
-				for ($i = 0; $i < 7; $i++) {
+				for ($i = 0; $i < 8; $i++) {
 					echo '<div class="grid-item grid-item-'.$i.'">';
 						foreach (get_field('mosaico')['areas_do_mosaico'] as $key => $value) {
 							if((int)explode('Área ', $value['slot_do_mosaico'])[1] == ($i + 2)){
