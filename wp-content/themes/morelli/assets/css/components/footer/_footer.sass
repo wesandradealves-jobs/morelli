@@ -15,15 +15,14 @@
 					height: auto
 			&:nth-child(1)
 				color: white
-				background: url(assets/imgs/dash.png) center center / cover no-repeat transparent
+				opacity: .75
+				background: url(assets/imgs/triangle.png) center -3vw/36vw 45vw no-repeat transparent
 				+mq(2050px, min)
 					display: none
 				+mq(1279px, max)
 					background: black
 					+mq(1140px, max)
-						flex: 0 0 auto 
-						padding: 30px
-						width: 100%
+						display: none
 				position: relative
 				padding: 35px 15px
 				+mq(2048px, max)

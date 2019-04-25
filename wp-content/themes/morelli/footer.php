@@ -2,7 +2,16 @@
 	<footer class="footer">
 		<?php if(is_front_page() || $post->post_name == 'fale-conosco') : ?>
 			<div class="studio">
-				<?php get_template_part('template-parts/contato'); ?>
+				<div>
+					<div class="contato">
+		                <div>
+		                    <h2 class="quem-somos-title">
+		                        <span>Quem</span>
+		                        <span>Somos</span>
+		                    </h2>
+		                </div>						
+					</div>
+				</div>
 				<?php
 					if(get_page_by_path('quem-somos')->post_content){ ?>
 						<div>

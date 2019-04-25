@@ -4,7 +4,27 @@
 		<div class="owl-carousel">
 			<?php 
 				foreach (get_field('galeria') as $key => $value) {
-					echo '<div class="item" style="background-image:url('.$value['imagem'].')"></div>';
+					echo '<div class="item" style="background-image:url('.$value['imagem'].')">';
+					if(is_front_page()) :
+						?>
+						<?php if($value['titulo']||$value['texto']||$value['url']) : ?>
+						<div class="container">
+							<div>
+								<?php if($value['titulo']) : ?>
+								<h3><?php echo $value['titulo']; ?></h3>
+								<?php endif; ?>
+								<?php if($value['texto']) : ?>
+									<?php echo $value['texto']; ?>
+								<?php endif; ?>
+								<?php if($value['url']) : ?>
+									<a href="<?php echo $value['url']; ?>" class="btn btn-1">Ver Mais</a>
+								<?php endif; ?>
+							</div>
+						</div>
+						<?php endif; ?>
+						<?php 
+					endif;
+					echo '</div>';
 				}
 			?>
 		</div>

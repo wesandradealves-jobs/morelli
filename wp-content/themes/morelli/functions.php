@@ -389,6 +389,34 @@ function remove_thumbnail_support( )
 				remove_post_type_support( 'post', 'comments' );
 				remove_post_type_support( 'post', 'revisions' );
 		}
+
+function wpse_228223_verify_caller_file( $file_name, $files = array(), $dir = '' ) {
+
+    if( empty( $files ) ) {
+        $files = debug_backtrace();
+    }
+
+    if( ! $dir ) {
+        $dir = get_stylesheet_directory() . '/';
+    }
+
+    $dir = str_replace( "/", "\\", $dir );
+    $caller_theme_file = array();
+
+    foreach( $files as $file ) {
+        if( false !== mb_strpos($file['file'], $dir) ) {
+            $caller_theme_file[] = $file['file'];
+        }
+    }
+
+    if( $file_name ) {
+        return in_array( $dir . $file_name, $caller_theme_file );
+    }
+
+    return;
+
+}
+		
 add_action( 'init', 'remove_thumbnail_support' );
 add_theme_support( 'post-thumbnails' );
 add_post_type_support( 'page', 'excerpt' );

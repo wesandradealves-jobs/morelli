@@ -42,9 +42,20 @@
     <div id="wrap">
         <header class="header">
             <div class="container">
-                <?php get_template_part('template-parts/contato'); ?>
                 <?php get_template_part('template-parts/logo'); ?>
                 <?php get_template_part('template-parts/navigation'); ?>
+                <div class="language">
+                    <nav>
+                        <ul>
+                            <li class="active">
+                                <a href="#">Português</a>
+                            </li>
+                            <li>
+                                <a href="#">English</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>                
             </div>
             <div class="mobile-navigation">
                 <?php get_template_part('template-parts/navigation'); ?>

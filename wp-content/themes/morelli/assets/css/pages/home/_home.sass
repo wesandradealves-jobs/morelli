@@ -1,4 +1,36 @@
 .pg-home
+	.webdoor
+		.item
+			color: white 
+			text-align: center 
+			.container
+				>div 
+					padding: 15px 60px
+					background-color: rgba(0,0,0,.55)
+					width: 100%
+					max-width: 480px
+					margin: 0 auto
+				h3 
+					font-family: 'Montserrat', sans-serif
+					+rem('font-size', 40px)
+					text-transform: uppercase
+					font-weight: 300
+				p
+					+rem('font-size', 12px)
+					font-family: 'Roboto Condensed', sans-serif
+					margin: 10px auto
+				.btn 
+					font-family: 'Roboto Condensed', sans-serif
+					color: white 
+					+rem('font-size', 22px)
+					font-weight: bold 
+					display: block 
+					margin-left: auto 
+					margin-right: auto
+					max-width: 120px
+					margin-bottom: -36px
+					&:nth-child(2)
+						margin-top: 10px
 	.grid
 		display: flex
 		flex-flow: row wrap
@@ -8,50 +40,50 @@
 			background: black
 			border: 1px solid rgba(255,255,255,.2)
 			flex: auto
-			padding: 15px
+			
 			height: 35vw
-			&:last-child
-				background: url(assets/imgs/triangle.png) center -9vmax / cover no-repeat transparent
-				color: white
-				cursor: pointer
-				+transition(500ms)
-				&:hover 
-					opacity: .75
-				p
-					position: absolute
-					bottom: 1vw
-					right: 0
-					width: 70%
-					font-size: 1.31vmax
-					line-height: 1.9vmax
-				h2
-					z-index: 2
-					+mq(2048px, max)
-						top: 0
-						font-weight: 500
-						text-transform: uppercase
-						font-size: 1.5vw
-						position: absolute
-						left: 0
-						margin: 2vw 1.5vw
-			&:first-child
-				background: url(assets/imgs/dash.png) center center / cover no-repeat transparent
-				color: white
-				h2
-					span
-						display: block
-						&:last-child
-						    letter-spacing: .13vw
-					+mq(2048px, max)
-						bottom: 0
-						font-weight: 500
-						text-transform: uppercase
-						font-size: 3.2vw
-						position: absolute
-						right: 0
-						margin: 4vw 2vw		
-			@for $i from 2 through 9 
-				&:nth-child(#{$i}) 
+			// &:last-child
+			// 	background: url(assets/imgs/triangle.png) center -9vmax / cover no-repeat transparent
+			// 	color: white
+			// 	cursor: pointer
+			// 	+transition(500ms)
+			// 	&:hover 
+			// 		opacity: .75
+			// 	p
+			// 		position: absolute
+			// 		bottom: 1vw
+			// 		right: 0
+			// 		width: 70%
+			// 		font-size: 1.31vmax
+			// 		line-height: 1.9vmax
+			// 	h2
+			// 		z-index: 2
+			// 		+mq(2048px, max)
+			// 			top: 0
+			// 			font-weight: 500
+			// 			text-transform: uppercase
+			// 			font-size: 1.5vw
+			// 			position: absolute
+			// 			left: 0
+			// 			margin: 2vw 1.5vw
+			// &:first-child
+			// 	background: url(assets/imgs/dash.png) center center / cover no-repeat transparent
+			// 	color: white
+			// 	h2
+			// 		span
+			// 			display: block
+			// 			&:last-child
+			// 			    letter-spacing: .13vw
+			// 		+mq(2048px, max)
+			// 			bottom: 0
+			// 			font-weight: 500
+			// 			text-transform: uppercase
+			// 			font-size: 3.2vw
+			// 			position: absolute
+			// 			right: 0
+			// 			margin: 4vw 2vw		
+			@for $i from 2 through 10 
+				&:nth-child(#{$i}):not(:nth-child(8))
 					&::after 
 						content: '#{$i}'
 						display: block 
@@ -67,42 +99,109 @@
 						left: calc(50% - 1.5vw)
 						z-index: 1
 						text-align: center
+			&:nth-child(1),
+			&:nth-child(8)
+				@extend .flex 
+				flex-flow: column wrap 
+				justify-content: space-between 
+				color: white
+				padding: 1.3vw
+				h2
+					text-transform: uppercase
+					span 
+						display: block
+				div
+					p 
+						font-size: 1vw
+						line-height: 1.8vw	
+						span 
+							display: block	
+				.shortcuts
+					height: 100%
+					.contato
+						height: inherit
+						@extend .flex 
+						flex-flow: column wrap 
+						justify-content: space-between 		
+						>div 
+							&:first-child 
+								width: 80%
+								margin-right: auto 
+								& + div 
+									margin-left: auto
+									margin-top: auto
 			&:nth-child(1) 
+				.contato
+					>div:last-of-type
+						h2
+							margin: 1.5vw	
+				h2 
+					font-size: 3.3vw		
 				width: 33%
+				background: url(assets/imgs/dash.png) 0 0vw/33vw 35vw no-repeat transparent
 			&:nth-child(2) 
 				width: 37%
+				.post 
+				    max-width: 20vw
 			&:nth-child(3)
 				height: 15vw 
 				width: 28.4%
 				margin-right: 0
+				.post 
+					max-width: 20vw
 			&:nth-child(4)
 				height: 30vw
 				width: 19.2%
 			&:nth-child(5)
 				height: 30vw
 				width: 48%
+				.post 
+				    max-width: 24vw
 			&:nth-child(6)
 			    height: 35vw
 			    top: -20vw
 			    width: 27%
+			    .post 
+				    max-width: 20vw
 			&:nth-child(7)
 				height: 15vw
 				top: 50vw
 				width: 29%
 				position: absolute
 				right: 0
+				.post 
+					max-width: 20vw
 			&:nth-child(8)
+				flex: 0 0 auto 
+				cursor: pointer
 				height: 22vw
 				top: -5vw
-				width: 15.5%
+				width: 31%
+				background: url(assets/imgs/triangle.png) 0 -1VW/22vw 22vw no-repeat transparent
+				.post 
+				    max-width: 21vw		
+				h2 
+					font-size: 1.8vw
+				> div
+					width: 50%
+					&:first-of-type 
+						margin-right: auto 
+						& + div 
+							width: 80%
+							margin-left: auto 
+
 			&:nth-child(9)
 				height: 22vw
 				top: -5vw
-				flex: 1
+				flex: 0 0 auto 
+				width: 49%
+				.post 
+    				max-width: 16vw				
 			&:nth-child(10)
 				height: 22vw
 				top: -5vw	
-				flex: 1				
+				flex: 0 0 auto 
+				width: 20%			
 		.grid-bg
 			position: absolute 
 			top: 0 
@@ -113,7 +212,7 @@
 			background-position: center 
 			background-repeat: no-repeat
 			background-size: cover
-			z-index: 2
+			z-index: 1
 		.grid-posts
 			overflow: hidden
 			min-height: 100%
@@ -121,7 +220,7 @@
 			@extend .flex 
 			align-items: center
 			flex-flow: column wrap 
-			justify-content: space-around
+			justify-content: center
 			width: 100%
 			.post
 				&:hover
@@ -130,6 +229,8 @@
 				background-color: black 
 				color: white
 				padding: 1vw
+				width: calc(100% - 1.3vw)
+				z-index: 3
 				&:not(:last-child)
 					margin-bottom: 1vw
 				h3 
